@@ -1,137 +1,268 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolyo | Ali Haydar Mavi</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ali Haydar | Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: #0d0d0d;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #222;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      background: linear-gradient(90deg, #00aaff, #00ffaa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header a {
+      background: linear-gradient(90deg, #00aaff, #0077ff);
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    header a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 170, 255, 0.4);
+    }
+
+    /* Section */
+    section {
+      margin: 70px 0;
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+
+    section:nth-of-type(1) { animation-delay: 0.2s; }
+    section:nth-of-type(2) { animation-delay: 0.4s; }
+    section:nth-of-type(3) { animation-delay: 0.6s; }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    section h2::after {
+      content: "";
+      display: block;
+      height: 3px;
+      width: 60px;
+      margin: 10px auto 0;
+      background: linear-gradient(90deg, #00aaff, #00ffaa);
+      border-radius: 2px;
+    }
+
+    section p {
+      color: #bbb;
+      font-size: 1.1rem;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* Skills */
+    .skills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .skill {
+      background: #1a1a1a;
+      padding: 12px 20px;
+      border-radius: 8px;
+      color: #f5f5f5;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s;
+    }
+
+    .skill:hover {
+      background: #222;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,170,255,0.3);
+    }
+
+    /* Projects */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .project {
+      background: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+
+    .project img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-content {
+      padding: 20px;
+      text-align: left;
+    }
+
+    .project-content h3 {
+      margin-top: 0;
+      color: #f5f5f5;
+    }
+
+    .project-content p {
+      color: #bbb;
+      font-size: 0.95rem;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,170,255,0.3);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      border-top: 1px solid #222;
+      color: #888;
+      font-size: 0.9rem;
+      margin-top: 60px;
+    }
+
+    footer:hover {
+      color: #00aaff;
+      text-shadow: 0 0 8px rgba(0,170,255,0.6);
+    }
+  </style>
 </head>
 <body>
-  <header id="navbar">
-    <div class="container">
-      <h1 class="logo">Ali Haydar Mavi</h1>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#about">Hakkımda</a></li>
-          <li><a href="#projects">Projeler</a></li>
-          <li><a href="#contact">İletişim</a></li>
-        </ul>
-        <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
-    </div>
-  </header>
-  
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>Ali Haydar</h1>
+      <a href="#">📄 Download My CV</a>
+    </header>
 
-  <section id="hero">
-    <div class="container fade-in">
-      <h2>Merhaba, ben <span class="highlight">Ali Haydar Mavi</span></h2>
-      <p>Yazılım&Donanım Geliştirici | Fizik&Matematik Meraklısı | Felsefe&Tarih Okuyucusu | Öğrenci</p>
-      <a href="#contact" class="btn">Benimle İletişime Geç</a>
-    </div>
-  </section>
+    <!-- Hero -->
+    <section>
+      <h2>Hello, I'm Ali Haydar</h2>
+      <p>
+        Hi! I'm Ali Haydar, a physics enthusiast with a passion for programming, electronics, and quantum computing.
+        I enjoy exploring classical and modern physics concepts and applying them through simulations and projects.
+      </p>
+    </section>
 
-  <section id="about" class="section slide-in">
-    <div class="container">
-      <h2>Hakkımda</h2>
-      <p style="margin-bottom: 24px;">
-        Küçüklüğümden beri yazılıma olan ilgim hiç azalmadı. Özellikle Python ve C programlama dillerinde derinlemesine bilgi sahibi oldum ve bu dilleri aktif olarak kullanıyorum. Yazılım geliştirme sürecinde, sadece kod yazmakla kalmayıp, yaratıcı çözümler üretmek ve kullanıcı deneyimini ön planda tutmak benim için çok önemli. Bu sebeple front-end geliştirme alanında kendimi sürekli geliştirmeye devam ediyorum; modern, estetik ve işlevsel arayüzler tasarlamak benim tutkularımdan biri.
-      </p>
-      <p style="margin-bottom: 24px;">
-        Bununla birlikte, teknoloji sadece yazılımdan ibaret değil. Donanım dünyası da ilgimi çekiyor ve bu nedenle PCB tasarımı ile işlemci mimarisi üzerine çalışıyorum. Yazılım ile donanımı bir araya getirerek, hem teorik hem de pratik anlamda güçlü projeler geliştirmeyi hedefliyorum. Bu alanlarda kendimi geliştirirken, karşılaştığım her yeni bilgi beni daha da motive ediyor.
-      </p>
-      <p style="margin-bottom: 24px;">
-        Okul hayatımın dışında, temel bilimlere olan ilgim doğrultusunda fizik ve matematik çalışmalarımı sürdürüyorum. Bu disiplinler, problemlere yaklaşım biçimimi şekillendirirken, teknolojik çözümler üretmekte bana sağlam bir altyapı sağlıyor. Ayrıca, tarih ve felsefe okumaları yaparak farklı düşünce sistemlerini anlamaya ve bakış açımı genişletmeye çalışıyorum. Bu çeşitlilik, sadece teknik bilgiyle değil, aynı zamanda eleştirel düşünceyle de donanmış bir birey olmamı sağlıyor.
-      </p>
-      <p style="margin-bottom: 24px;">
-        Uzun vadeli hedefim, optik bilgisayar teknolojileri gibi yenilikçi ve henüz gelişmekte olan bilgisayar teknolojileri üzerinde çalışmak ve bu alanda önemli katkılar yapmak. Yazılım ve donanım bilgisini birleştirerek, geleceğin teknolojilerini şekillendiren projelerde yer almak istiyorum. Teknoloji dünyasında fark yaratmak ve insanlara daha iyi çözümler sunmak benim için büyük bir motivasyon kaynağı.
-      </p>
-    </div>
-  </section>
-
-  <section id="projects" class="section fade-in">
-    <div class="container">
-      <h2>Öne  Çıkan Projelerim</h2>
-      <div class="projects">
-        <div class="project-card">
-          <h3>Tabiat</h3>
-          <p>Geliştirmekte olduğum fizik simülasyonu.</p>
-        </div>
-        <div class="project-card">
-          <h3>OptiCard Desinger</h3>
-          <p>PCB fakat optik versiyonu.</p>
-        </div>
-        <div class="project-card">
-          <h3>Atarca (Pulsar)</h3>
-          <p>Geliştirmekte olduğum büyük pentest aracı.</p>
-        </div>
-        <div class="project-card">
-          <h3>QrExploit</h3>
-          <p>QrCode çıktısı veren exploit oluşturucu.</p>
-        </div>
-        <div class="project-card">
-          <h3>SafavidTimeLine</h3>
-          <p>Safevi devletinin periyotlarını anlatan interaktif web içerği.</p>
-        </div>
-        <div class="project-card">
-          <h3>AnonChat</h3>
-          <p>%100 anonim chat uygulaması.</p>
-        </div>
-        <div class="project-card">
-          <h3>Tüz</h3>
-          <p>Geliştirmekte olduğum fizik simülasyonu.</p>
+    <!-- Skills -->
+    <section>
+      <h2>My Skills</h2>
+      <div class="skills">
+        <div class="skill">💻 Programming & Classical Computing</div>
+        <div class="skill">🔌 Electronic Circuits</div>
+        <div class="skill">📕 Calculus & Linear Algebra</div>
+        <div class="skill">🪐 Physic Basics</div>
+        <div class="skill">⚛️ Quantum Computing Basics</div>
+        <div class="skill">🏹 History Reading</div>
+        <div class="skill">🔤 Etymology</div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact" class="section slide-in">
-    <div class="container">
-      <h2>İletişim</h2>
-      <p>Bana ulaşmak için: <a href="mailto:haydar@haydar.com">haydar@haydar.com</a></p>
-    </div>
-  </section>
+    <!-- Projects -->
+    <section>
+      <h2>My Lastest Projects</h2>
+      <div class="projects">
+        <div class="project">
+          <img src="img/onlysolver.png" alt="Project 1">
+          <div class="project-content">
+            <h3>OnlySolver</h3>
+            <p>OnlySolver is a modular framework that solves mathematical and physical problems through multiple approaches.</p>
+          </div>
+        </div>
+        <div class="project">
+          <img src="img/hackshelllogo.png" alt="Project 2">
+          <div class="project-content">
+            <h3>HackShell</h3>
+            <p>A fully modular terminal customized for cybersecurity. Its core is finished.</p>
+          </div>
+        </div>
+        <div class="project">
+          <img src="img/logicislogic.png" alt="Project 3">
+          <div class="project-content">
+            <h3>Logic[is]Logic</h3>
+            <p>Logic[is]Logic is a platform for interactive logic gate simulations in electronic and optical environments.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Ali Haydar Mavi. Tüm hakları saklıdır.</p>
-    </div>
-  </footer>
+        <!-- Articles -->
+    <section>
+      <h2>My Lastest Articles</h2>
+      <div class="projects">
+        <div class="project">
+          <div class="project-content">
+            <h3>Alternative Computer Systems</h3>
+            <p>A look at future alternative computing systems and a critique of present-day mathematical</p>
+          </div>
+        </div>
+        <div class="project">
+          <div class="project-content">
+            <h3>CyberSec-Lessons (Lessons on Github)</h3>
+            <p>My introductory articles and content to cybersecurity are on Github.</p>
+          </div>
+        </div>
+        <div class="project">
+          <div class="project-content">
+            <h3>Math4Programmers (Lessons on Github)</h3>
+            <p>Basic math lessons to understand computers on github. With helper tools.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      &copy; 2025 Ali Haydar. All rights reserved.
+    </footer>
+  </div>
 </body>
 </html>
-
-<script>
-  const navbar = document.getElementById('navbar');
-  let lastScrollTop = 0;
-
-  window.addEventListener('scroll', () => {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if(scrollTop > lastScrollTop){
-      navbar.style.top = "-80px";
-    } else {
-      navbar.style.top = "0";
-    }
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-  });
-
-  // Hamburger Menü aç/kapa
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
-
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-
-  // Menü linklerine tıklanınca menüyü kapat (mobil için)
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      if(navLinks.classList.contains('active')){
-        navLinks.classList.remove('active');
-      }
-    });
-  });
-</script>
